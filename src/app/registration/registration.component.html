@@ -1,0 +1,73 @@
+<div class="d-flex justify-content-center align-items-center" style="height: 700px;">
+    <form [formGroup]="registrationPage" class="border p-2 border-2">
+        <div class="text-center">
+            <h3>User Registration</h3>
+        </div>
+        <dl>
+            <div>
+                <label for="userName" class="form-label text-center">User Name</label>
+                <input type="text" formControlName="userName" class="form-control" id="userName">
+                <span class="text-danger"
+                    *ngIf="submitted && registrationPage?.controls?.['userName']?.errors?.['required']">
+                    User Name Is Required</span>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="firstName" class="form-label text-center">First Name</label>
+                    <input type="text" formControlName="firstName" class="form-control" id="firstName">
+                    <span class="text-danger"
+                        *ngIf="submitted && registrationPage?.controls?.['firstName']?.errors?.['required']">
+                        First Name Is Required</span>
+                </div>
+                <div class="col">
+                    <label for="lastName" class="form-label text-center">Last Name</label>
+                    <input type="text" formControlName="lastName" class="form-control" id="lastName">
+                    <span class="text-danger"
+                        *ngIf="submitted && registrationPage?.controls?.['lastName']?.errors?.['required']">
+                        Last Name Is Required</span>
+                </div>
+            </div>
+            <div>
+                <label for="password" class="form-label text-center">Password</label>
+                <input type="password" formControlName="password" class="form-control" id="password">
+                <span class="text-danger"
+                    *ngIf="submitted && registrationPage?.controls?.['password']?.errors?.['required']">
+                    Password Is Required</span>
+            </div>
+            <div>
+                <label for="confirmPassword" class="form-label text-center">Confirm Password</label>
+                <input type="password" formControlName="confirmPassword" class="form-control" id="confirmPassword">
+                <span class="text-danger"
+                    *ngIf="submitted && registrationPage?.controls?.['confirmPassword']?.errors?.['required']">
+                    Confirm Password Is Required</span>
+            </div>
+            <span class="text-danger"
+                *ngIf="submitted && registrationPage.get('password')?.value !== registrationPage.get('confirmPassword')?.value">
+                Password And Confirm Password MustMatch</span>
+            <div>
+                <label for="email" class="form-label text-center">Email</label>
+                <input type="text" formControlName="email" class="form-control" id="email">
+                <span class="text-danger"
+                    *ngIf="submitted && registrationPage?.controls?.['email']?.errors?.['required']">
+                    Email Is Required</span>
+                <span class="text-danger"
+                    *ngIf="submitted && registrationPage?.controls?.['email']?.errors?.['pattern']">
+                    Please provide a valid email address</span>
+            </div>
+            <div>
+                <label for="phoneNumber" class="form-label text-center">Phone Number</label>
+                <input type="number" formControlName="phoneNumber" class="form-control" id="phoneNumber">
+                <span class="text-danger"
+                    *ngIf="submitted && registrationPage?.controls?.['phoneNumber']?.errors?.['required']">
+                    Phone Number Is Required</span>
+                <span class="text-danger"
+                    *ngIf="submitted && registrationPage?.controls?.['phoneNumber']?.errors?.['pattern']">
+                    Invalid Phone Number</span>
+            </div>
+        </dl>
+        <div>
+            <button class="btn btn-primary" type="submit" (click)="register()">Register</button>
+        </div>
+        <a routerLink="/login">click login!!</a>
+    </form>
+</div>

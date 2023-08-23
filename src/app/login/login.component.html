@@ -1,0 +1,26 @@
+<div class=" d-flex justify-content-center align-items-center " style="height: 500px">
+    <form [formGroup]="loginPage" class="border p-2 border-2">
+        <div class="text-center">
+            <h3>User Login</h3>
+        </div>
+        <dl>
+            <div>
+                <label for="userName" class="form-label text-center">User Name</label>
+                <input type="text" formControlName="userName" class="form-control" id="userName">
+                <span class="text-danger" *ngIf="submitted && loginPage?.controls?.['userName']?.errors?.['required']">
+                    User Name Is Required</span>
+            </div>
+            <div>
+                <label for="password" class="form-label text-center">Password</label>
+                <input type="password" formControlName="password" class="form-control" id="password">
+                <span class="text-danger" *ngIf="submitted && loginPage?.controls?.['password']?.errors?.['required']">
+                    Password Is Required</span>
+            </div>
+            <span class="text-danger">{{registrationPage}}</span>
+        </dl>
+        <div>
+            <button class="btn btn-primary" type="submit" (click)="login()">Login</button>
+        </div>
+        <a routerLink="/registration">click register!!</a>
+    </form>
+</div>

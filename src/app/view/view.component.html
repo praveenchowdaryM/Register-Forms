@@ -1,0 +1,54 @@
+<div class="card">
+  <div class="d-flex justify-content-center align-items-center" style="height: 700px;">
+    <div class="border p-2 border-2">
+      <div class="card-header">
+        <h2 class="text-center">View User</h2>
+      </div>
+      <div class="card-body">
+        <div>
+          <label for="userName" class="form-label text-center">
+            <strong>
+              <h4>User Name:</h4>
+            </strong>
+          </label>&nbsp;&nbsp;
+          <span class="larger-font">{{ viewUser.value.userName }}</span>
+        </div>
+        <div>
+          <label for="firstName" class="form-label text-center">
+            <strong>
+              <h4>First Name:</h4>
+            </strong>
+          </label>&nbsp;&nbsp;
+          <span class="larger-font">{{ viewUser.value.firstName }}</span>
+        </div>
+        <div>
+          <label for="lastName" class="form-label text-center">
+            <strong>
+              <h4>Last Name:</h4>
+            </strong>
+          </label>&nbsp;&nbsp;
+          <span class="larger-font">{{ viewUser.value.lastName }}</span>
+        </div>
+        <div>
+          <label for="email" class="form-label text-center">
+            <strong>
+              <h4>Email:</h4>
+            </strong>
+          </label>&nbsp;&nbsp;
+          <span class="larger-font">{{ viewUser.value.email }}</span>
+        </div>
+        <div>
+          <label for="phoneNumber" class="form-label text-center">
+            <strong>
+              <h4>Number:</h4>
+            </strong>
+          </label>&nbsp;&nbsp;
+          <span class="larger-font">{{ viewUser.value.phoneNumber }}</span>
+        </div>
+      </div>
+      <div class="text-center">
+        <button routerLink="/dashboard" class="btn btn-primary">Back</button>
+      </div>
+    </div>
+  </div>
+</div>

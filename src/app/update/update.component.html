@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center align-items-center" style="height: 700px;">
+    <form [formGroup]="updatePage" class="border p-2 border-2" >
+        <div class="text-center">
+            <h3>Update User</h3>
+        </div>
+        <dl>
+            <div>
+                <label for="userName" class="form-label text-center">User Name</label>
+                <input type="text" formControlName="userName" class="form-control" id="userName">
+            </div>
+            <div>
+                <label for="firstName" class="form-label text-center">First Name</label>
+                <input type="text" formControlName="firstName" class="form-control" id="firstName">
+            </div>
+            <div>
+                <label for="lastName" class="form-label text-center">Last Name</label>
+                <input type="text" formControlName="lastName" class="form-control" id="lastName">
+            </div>
+            <div>
+                <label for="email" class="form-label text-center">Email</label>
+                <input type="text" formControlName="email" class="form-control" id="email">
+            </div>
+            <div>
+                <label for="phoneNumber" class="form-label text-center">Phone Number</label>
+                <input type="number" formControlName="phoneNumber" class="form-control" id="phoneNumber">
+            </div>
+        </dl>
+        <div class="text-center">
+            <button type="submit" class="float-right btn btn-primary" (click)="save()">Save</button>
+            <button type="submit" routerLink="/dashboard" class="float-left btn btn-primary">Back</button>
+        </div>
+    </form>
+</div>
